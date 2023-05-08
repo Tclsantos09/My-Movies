@@ -8,12 +8,8 @@ export const Home = () => {
     const fetchMovies = async () => {
         const { data } = await MoviesService.getMovies();
         setMovies(data.results);
-        console.log(movies)
-    }
-
-    useEffect(() => {
-        fetchMovies();
-    }, []);
+    };
+    useEffect(() => { fetchMovies(); }, []);
 
     return (
         <MoviesContainer>

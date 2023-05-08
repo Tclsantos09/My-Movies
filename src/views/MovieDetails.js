@@ -4,18 +4,12 @@ import { MoviesService } from "../api/MoviesService";
 
 export const MovieDetail = () => {
     const { id } = useParams();
-
     const [movie, setMovie] = useState([]);
-
     const fetchMovie = async () => {
         const { data } = await MoviesService.getMovieById(id);
         setMovie(data);
-        console.log(data)
-    }
-
-    useEffect(() => {
-        fetchMovie();
-    }, []);
+    };
+    useEffect(() => { fetchMovie(); }, []);
 
     return (
         <>
@@ -25,4 +19,4 @@ export const MovieDetail = () => {
             </article>
         </>
     )
-}
+};
